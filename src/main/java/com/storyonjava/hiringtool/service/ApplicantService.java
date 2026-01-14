@@ -32,4 +32,9 @@ public class ApplicantService {
     	
     	return new ResponseEntity<Long>(id, HttpStatus.OK);
     }
+    
+    public Applicant getApplicantById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Applicant not found"));
+    }
 }

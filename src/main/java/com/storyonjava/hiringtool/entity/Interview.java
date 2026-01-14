@@ -1,5 +1,7 @@
 package com.storyonjava.hiringtool.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +18,7 @@ public class Interview {
 
 	    @ManyToOne
 	    @JoinColumn(name = "job_id")
+	    @JsonIgnore
 	    private Job job;
 
 		public Interview() {

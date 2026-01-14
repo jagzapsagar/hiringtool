@@ -39,4 +39,9 @@ public class ApplicantController {
     public ResponseEntity<Long> DeleteById(@PathVariable Long id) {
     	return service.deleteById(id);
     }
+ // GET /applicants/{id}
+    @GetMapping("/{id}")
+    public Applicant getApplicant(@PathVariable Long id) {
+        return service.getApplicantById(id);
+    }
 }

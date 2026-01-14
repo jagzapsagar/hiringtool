@@ -3,6 +3,8 @@ package com.storyonjava.hiringtool.entity;
 import java.util.List;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,8 @@ public class Job {
 
     private String title;
     private String location;
-
+    
+    @JsonIgnore
     @ManyToMany(mappedBy = "appliedJobs")
     private Set<Applicant> applicants;
 
